@@ -12,7 +12,8 @@ import           Text.Megaparsec
 import CS30.Exercises.SetConversionProofs.SetExprParser (parseExpr, parseUntil, symbol, SetExpr)
 
 type Parser = ParsecT Void String Identity
-data Law = Law String (Equation) 
+data Law = Law {lawname::String, lawEq::Equation}
+-- data Law = Law String Equation -- same as data Law{lawname::String, lawEq::Equation}
             deriving Show
 type Equation = (SetExpr, SetExpr)
 

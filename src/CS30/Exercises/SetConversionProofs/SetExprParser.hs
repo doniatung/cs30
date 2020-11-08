@@ -28,7 +28,8 @@ data SetExpr = Var String -- single variable
               | In SetExpr      -- element of 
               | NotIn SetExpr   -- not an element of
               | Subset SetExpr -- subset of
-              deriving Show
+              deriving (Show, Eq)
+    -- could change to add a bin that takes an operation and 2 expressions
 
 type Parser = ParsecT Void String Identity
 
